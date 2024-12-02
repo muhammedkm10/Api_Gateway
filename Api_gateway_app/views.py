@@ -22,6 +22,5 @@ def auth_service(request,action):
             response = requests.post(service_url, json=body, headers=headers)
             return JsonResponse(response.json(),status = response.status_code)
     except Exception as e:
-        print(str(e))
         return JsonResponse({'error':str(e)})
     return JsonResponse({"message":"this is the response"})
